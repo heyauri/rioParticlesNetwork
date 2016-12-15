@@ -5,7 +5,7 @@
     <title>RioParticleCanvasNetwork</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="js/rioParticleCanvas.js"></script>
+    <script src="js/rioParticlesNetwork.js"></script>
     <style>
         * {
             margin: 0;
@@ -16,7 +16,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000;
+            background-color: #f6f7f7;
         }
     </style>
 </head>
@@ -27,19 +27,19 @@
     window.onload = function () {
         var width = document.body.clientWidth;
         var height = document.body.clientHeight;
-        rioParticleCanvas.init({
+        RioParticlesNetwork.init({
             width: width,
             height: height,
-            colors: ['#fff'],
+            colors: ['#4abcdd'],
             //number of particles
             number: 80,
             longestDistance: 240,
-            radius: 2,
+            radius: 4,
             //whether the radius of particles changeable
             //if true, their radius will be the result of multiply the base radius above and a random number together
             radiusChangeable: true
         });
-        rioParticleCanvas.draw();
+        RioParticlesNetwork.start();
     }
 </script>
 </body>

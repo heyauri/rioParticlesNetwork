@@ -17,7 +17,7 @@
             y: seed2 * conf.height
         };
         if (conf.radiusChangeable) {
-            obj['radius'] = seed1 * conf.radius;
+            obj['radius'] = Math.random() * conf.radius;
         }
         else {
             obj['radius'] = conf.radius;
@@ -29,7 +29,7 @@
     }
 
 
-    window.rioParticleCanvas = {
+    window.RioParticlesNetwork = {
         conf: {
             id: 'particleContainer',
             width: 1200,
@@ -68,12 +68,12 @@
             this.elements.context = this.elements.canvas.getContext('2d');
             this.elements.particleArray = this.particleArrayConstruct();
         },
-        draw: function () {
+        start: function () {
             var i, j;
-            var arr = rioParticleCanvas.elements.particleArray;
-            var width = rioParticleCanvas.conf.width;
-            var height = rioParticleCanvas.conf.height;
-            rioParticleCanvas.elements.context.clearRect(0, 0, width, height);
+            var arr = RioParticlesNetwork.elements.particleArray;
+            var width = RioParticlesNetwork.conf.width;
+            var height = RioParticlesNetwork.conf.height;
+            RioParticlesNetwork.elements.context.clearRect(0, 0, width, height);
 
             //make one of the particles move randomly
             arr[Math.floor(Math.random() * arr.length)].vx = (Math.random() - Math.random()) / 2 * 5;
@@ -101,17 +101,18 @@
                         arr[i].y = height - arr[i].radius;
                     }
                 }
-                rioParticleCanvas.particleDraw(arr[i]);
+                RioParticlesNetwork.elements.context.globalAlpha=1;
+                RioParticlesNetwork.particleDraw(arr[i]);
             }
 
             //link the particle
             for (i = 0; i < arr.length; i++) {
                 for (j = i + 1; j < arr.length; j++) {
-                    rioParticleCanvas.particleLink(arr[i], arr[j]);
+                    RioParticlesNetwork.particleLink(arr[i], arr[j]);
                 }
             }
 
-            rioParticleCanvas.elements.requestId = requestAnimationFrame(rioParticleCanvas.draw);
+            RioParticlesNetwork.elements.requestId = requestAnimationFrame(RioParticlesNetwork.start);
         },
         // draw particles
         particleDraw: function (particle) {
@@ -129,7 +130,7 @@
             x2 = particle_2.x;
             y2 = particle_2.y;
             d = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-            longestDistance = rioParticleCanvas.conf.longestDistance;
+            longestDistance = RioParticlesNetwork.conf.longestDistance;
 
             //link the particles
             if (d < longestDistance) {
