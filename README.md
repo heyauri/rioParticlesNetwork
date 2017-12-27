@@ -5,7 +5,7 @@ A simple animation of particles' network in HTMl5 Canvas.
 
 一个以HTML5 Canvas实现的简单粒子网络特效.
 
-![screenshot](github.com/ruiyeah/rioParticlesNetwork/blob/master/res/screen-shot.png)
+![screenshot](https://github.com/ruiyeah/rioParticlesNetwork/raw/master/res/screen-shot.png)
 
 ## Usage
 
