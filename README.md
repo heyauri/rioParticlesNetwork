@@ -5,6 +5,8 @@ A simple animation of particles' network in HTMl5 Canvas.
 
 一个以HTML5 Canvas实现的简单粒子网络特效.
 
+![screenshot](github.com/ruiyeah/rioParticlesNetwork/blob/master/res/screen-shot.png)
+
 ## Usage
 
 The class RioParticlesNetwork has three simple function: init,start and stop.
@@ -35,6 +37,8 @@ You can use the function init() to initialize the plugin.Here is a sample config
             //whether the radius of particles changeable
             //if true, their radius will be the result of multiply the base radius above and a random number together
             radiusChangeable: true,
+            //if true,some of the particles will change their speeds randomly
+            speedChangeRandomly: false
     });
 
 #### 3.start it

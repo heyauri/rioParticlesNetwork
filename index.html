@@ -28,11 +28,15 @@
         var width = document.body.clientWidth;
         var height = document.body.clientHeight;
         RioParticlesNetwork.init({
+            //the id of the canvas element
+            id: 'particleContainer',
             width: width,
             height: height,
-            //colors: ['#4abcdd'],
+            //the colors that the particles and line can be
+            colors: ['#4abcdd'],
             //number of particles
-            number: 120,
+            number: 80,
+            //the longest distance of the line that link the particles
             longestDistance: 240,
             radius: 4,
             //whether the radius of particles changeable
