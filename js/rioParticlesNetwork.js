@@ -38,7 +38,8 @@
             longestDistance: 240,
             radius: 2,
             colors: ['#4abcdd', '#1abc9c', '#DB3A34', ' #FFC857', '#2094B9', '#9068BE', '#E89F65'],
-            radiusChangeable: true
+            radiusChangeable: false,
+            speedChangeRandomly:false
         },
         elements: {
             canvas: undefined,
@@ -76,8 +77,10 @@
             RioParticlesNetwork.elements.context.clearRect(0, 0, width, height);
 
             //make one of the particles move randomly
-            arr[Math.floor(Math.random() * arr.length)].vx = (Math.random() - Math.random()) / 2 * 5;
-            arr[Math.floor(Math.random() * arr.length)].vy = (Math.random() - Math.random()) / 2 * 5;
+            if(RioParticlesNetwork.conf.speedChangeRandomly){
+                arr[Math.floor(Math.random() * arr.length)].vx = (Math.random() - Math.random()) / 2 * 5;
+                arr[Math.floor(Math.random() * arr.length)].vy = (Math.random() - Math.random()) / 2 * 5;
+            }
 
             //reset particles' position and collision detection
             for (i = 0; i < arr.length; i++) {

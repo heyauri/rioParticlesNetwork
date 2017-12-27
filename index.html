@@ -30,14 +30,16 @@
         RioParticlesNetwork.init({
             width: width,
             height: height,
-            colors: ['#4abcdd'],
+            //colors: ['#4abcdd'],
             //number of particles
-            number: 80,
+            number: 120,
             longestDistance: 240,
             radius: 4,
             //whether the radius of particles changeable
             //if true, their radius will be the result of multiply the base radius above and a random number together
-            radiusChangeable: true
+            radiusChangeable: true,
+            //if true,some of the particles will change their speeds randomly
+            speedChangeRandomly: false
         });
         RioParticlesNetwork.start();
     }
